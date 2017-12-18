@@ -194,5 +194,36 @@ Given an image along with possibly other modalities of data, the principal goals
     \item Write the full diagnostic report
 \end{enumerate}
 
+\subsubsection{Exercises}
+
+\begin{enumerate}
+\item Given an image of size 1025x173, after applying all of the following operations, what is the size of the resultant image?\\
+Convolution with kernel of size 10x10, max-pooling of 2x2, convolution with a 10x10 kernel, max-pooling of size 2x.\\
+(Assuming a stride of 1 and no padding).
+
+\item Often when using convolutional neural networks, one actually applies several convolutions to the image per layer, yielding several filtered images. What is the purpose of this?
+
+\item What is the purpose of the fully connected layers used as the last stages of a typical CNN architecture?
+
+\item Play with the tool found here: http://scs.ryerson.ca/~aharley/vis/conv/. What do you notice about the shapes of the filters found in the second convolutional layer?
+
+\end{enumerate}
+
+\subsubsection{Solutions}
+
+\begin{enumerate}
+\item After a convolution the size of the image is (dimension - kernel + 1) / p. 
+Applying this formula twice would result in an image of size 249x36 (rounding down).
+
+\item Applying multiple convolutions per layer allows the network to pick out several different features
+of the same size. The more convolutions applied per layer, the greater the number of features that can be extracted from the previous layer.
+
+\item The purpose of the fully connected layers is to learn which combinations of features are significant to the output of the model. Since the layers are fully connected, any combination of features can prove significant; this is in contrast to the convolutional layers which do impose restrictions about which features can be grouped together.
+
+\item There is no right or wrong answer! 
+
+\end{enumerate}
+
+
 \end{document}
 
